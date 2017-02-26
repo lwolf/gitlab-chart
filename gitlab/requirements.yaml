@@ -10,9 +10,9 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com/
 - name: runner
   version: 0.1.0
-  repository: https://localhost/
+  repository: https://kubernetes-charts.storage.googleapis.com/
   condition: runner.enabled
 - name: registry
   version: 0.1.0
-  repository: https://localhost/
+  repository: https://kubernetes-charts.storage.googleapis.com/
   condition: registry.enabled

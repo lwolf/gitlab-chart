@@ -1,0 +1,21 @@
+dependencies:
+- condition: ""
+  enabled: false
+  name: redis
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  tags: null
+  version: 0.4.5
+- condition: ""
+  enabled: false
+  name: postgresql
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  tags: null
+  version: 0.4.0
+- condition: ""
+  enabled: false
+  name: minio
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  tags: null
+  version: 0.0.4
+digest: sha256:42b571fd59ccf675cbdfbeebbada28194b1a8d41cd574821d978962f6da6ab47
+generated: 2017-02-26T16:20:18.744296853+01:00
