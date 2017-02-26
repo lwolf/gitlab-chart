@@ -23,15 +23,12 @@ data:
   DB_PORT: {{ default "5432" .Values.config.DB_PORT | quote }}
   DB_NAME: {{ default "gitlab_production" .Values.config.DB_NAME | quote }}
   DB_POOL: {{ default "10" .Values.config.DB_POOL | quote }}
-
   {{ if .Values.config.GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN }}
   GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN: {{ .Values.config.GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN | quote}}
   {{- end }}
-
   {{ if .Values.config.GITLAB_TIMEZONE -}}
   GITLAB_TIMEZONE: {{ .Values.config.GITLAB_TIMEZONE | quote }}
   {{- end }}
-
   {{ if .Values.config.GITLAB_SSH_HOST -}}
   GITLAB_SSH_HOST: {{ .Values.config.GITLAB_SSH_HOST | quote }}
   {{- end }}

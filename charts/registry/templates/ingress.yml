@@ -22,19 +22,15 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: {{ printf "%s-%s" $releaseName "gitlab" | trunc 63 }}
+              serviceName: {{ printf "%s-%s" $releaseName "registry" | trunc 63 }}
               servicePort: {{ $servicePort }}
-  {{- end }}
-    - host: {{ .Values.config.GITLAB_SSH_HOST }}
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: {{ printf "%s-%s" $releaseName "gitlab" | trunc 63 }}
-              servicePort: {{ .Values.config.GITLAB_SSH_PORT }}
+  {{ end }}
 
-  {{- if .Values.ingress.tls }}
   tls:
-{{ toYaml .Values.ingress.tls | indent 4 }}
-  {{- end -}}
+    - secretName: {{ default "registry-server-tls" .Values.ingress.secretName }}
+      hosts:
+      {{- range .Values.ingress.hosts }}
+        - {{ . }}
+      {{ end }}
+
 {{- end -}}

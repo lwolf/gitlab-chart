@@ -121,10 +121,6 @@ minio:
     enabled: true
     size: 20Gi
 
-runner:
-  kubernetes: false
-  docker: true
-
 
 config:
   DEBUG: "false"
@@ -132,4 +128,14 @@ config:
   # GITLAB_ROOT_PASSWORD: ""
   GITLAB_HOST: gitlab.example.com
   GITLAB_PORT: 443
+  GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN: "4CAi770WqUUVgYzyGmeS0PbGqcpTKl8XLVZfRZom"
+
+
+runner:
+  enabled: false
+  ## Host value for gitlabUrl should be the same as config.GITLAB_HOST
+  gitlabUrl: "https://gitlab.example.com/ci/"
+  ## registrationToken should be the same as config GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN
+  ## for the fresh systems
+  registrationToken: "4CAi770WqUUVgYzyGmeS0PbGqcpTKl8XLVZfRZom"
 

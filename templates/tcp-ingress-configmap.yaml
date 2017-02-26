@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tcp-ingress-configmap
+  {{ if .Values.ingress.configNamespaceOverride }}
+  namespace: {{ .Values.ingress.configNamespaceOverride }}
+  {{ end }}
+data:
+  {{ default "22" .Values.sshPort }}: {{ .Release.Namespace }}/{{ template "fullname" . }}:22

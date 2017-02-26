@@ -8,3 +8,11 @@ dependencies:
 - name: minio
   version: 0.0.4
   repository: https://kubernetes-charts.storage.googleapis.com/
+- name: runner
+  version: 0.1.0
+  repository: https://localhost/
+  condition: runner.enabled
+- name: registry
+  version: 0.1.0
+  repository: https://localhost/
+  condition: registry.enabled

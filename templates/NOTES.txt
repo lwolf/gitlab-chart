@@ -29,3 +29,19 @@
    external URL is reachable:
 
    {{ default "UNSPECIFIED" .Values.config.GITLAB_HOST }}
+
+
+##############################################################################
+## IMPORTANT NOTE!                                                          ##
+##############################################################################
+
+After successful installation make sure to save generated secrets:
+
+GITLAB_ROOT_PASSWORD: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ template "fullname" . }} -o jsonpath="{.data.GITLAB_ROOT_PASSWORD}" | base64 --decode)
+GITLAB_SECRETS_DB_KEY_BASE: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ template "fullname" . }} -o jsonpath="{.data.GITLAB_SECRETS_DB_KEY_BASE}" | base64 --decode)
+GITLAB_SECRETS_SECRET_KEY_BASE: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ template "fullname" . }} -o jsonpath="{.data.GITLAB_SECRETS_SECRET_KEY_BASE}" | base64 --decode)
+GITLAB_SECRETS_OTP_KEY_BASE: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ template "fullname" . }} -o jsonpath="{.data.GITLAB_SECRETS_OTP_KEY_BASE}" | base64 --decode)
+
+You need to provide this values during `helm upgrade` to avoid regeneration.
+
+

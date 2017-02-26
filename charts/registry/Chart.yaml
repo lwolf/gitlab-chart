@@ -1,0 +1,13 @@
+name: registry
+version: 0.1.0
+description: Gitlab docker registry
+keywords:
+- gitlab
+- registry
+home: https://about.gitlab.com
+sources:
+- https://hub.docker.com/r/gitlab/gitlab-runner/
+icon: https://gitlab.com/uploads/group/avatar/6543/gitlab-logo-square.png
+maintainers:
+- name: Sergey Nuzhdin
+  email: ipaq.lw@gmail.com

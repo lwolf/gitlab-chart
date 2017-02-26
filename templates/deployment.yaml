@@ -8,11 +8,13 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
         app: {{ template "fullname" . }}
+      annotations:
+        checksum/config-map: {{ include (print $.Chart.Name "/templates/configmap.yaml") . | sha256sum }}
     spec:
       containers:
       - name: {{ template "fullname" . }}
@@ -213,6 +215,12 @@ spec:
             port: 80
           initialDelaySeconds: 15
           timeoutSeconds: 1
+        {{ if .Values.registry.enabled }}
+        volumeMounts:
+        - name: certs
+          mountPath: /certs
+          readOnly: true
+        {{ end }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
       volumes:
@@ -222,4 +230,9 @@ spec:
           claimName: {{ template "fullname" . }}-data
       {{- else }}
         emptyDir: {}
+      {{- end }}
+      {{- if .Values.registry.enabled }}
+      - name: certs
+        secret:
+          secretName: {{ default "registry-server-tls" .Values.registry.ingress.secretName }}
       {{- end }}
