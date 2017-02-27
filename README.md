@@ -17,3 +17,8 @@ Some of the features:
 * PV support on the underlying infrastructure
 * Helm 2.2.0 (for conditions and flags support)
  
+## TODO:
+* testing/refactoring
+* splitting registry/runner into separate charts
+* more flexible runner configuration
+* monitoring of the whole thing in Prometheus
