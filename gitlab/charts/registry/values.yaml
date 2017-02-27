@@ -15,6 +15,11 @@ imageTag: "2.6.0"
 # imagePullPolicy:
 
 httpPort: 5000
+logLevel: "info"
+authTokenRealm: "https://gitlab.example.com/jwt/auth"
+authTokenService: "container_registry"
+authTokenIssuer: "gitlab-issuer"
+storageDeleteEnabled: "true"
 
 ingress:
   enabled: false

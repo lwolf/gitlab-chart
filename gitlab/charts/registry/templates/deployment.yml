@@ -20,19 +20,19 @@ spec:
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         env:
         - name: REGISTRY_LOG_LEVEL
-          value: debug
+          value: {{ .Values.logLevel | quote}}
         - name: REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY
           value: /var/lib/registry
         - name: REGISTRY_HTTP_ADDR
           value: :5000
         - name: REGISTRY_AUTH_TOKEN_REALM
-          value: https://gitlab.srvho.me/jwt/auth
+          value: {{ .Values.authTokenRealm | quote }}
         - name: REGISTRY_STORAGE_DELETE_ENABLED
-          value: "true"
+          value: {{ .Values.storageDeleteEnabled | quote}}
         - name: REGISTRY_AUTH_TOKEN_SERVICE
-          value: container_registry
+          value: {{ .Values.authTokenService | quote }}
         - name: REGISTRY_AUTH_TOKEN_ISSUER
-          value: gitlab-issuer
+          value: {{ .Values.authTokenIssuer | quote }}
         - name: REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE
           value: /certs/tls.crt
         volumeMounts:

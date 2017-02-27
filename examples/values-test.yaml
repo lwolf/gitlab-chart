@@ -1,0 +1,119 @@
+ingress:
+  enabled: true
+  configNamespaceOverride: "default"
+
+  ## Gitlab Ingress annotations
+  ##
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'true'
+
+  ## Gitlab Ingress hostnames
+  ## Must be provided if Ingress is enabled
+  ##
+  hosts:
+    - gitlab.example.com
+
+  ## Gitlab Ingress TLS configuration
+  ## Secrets must be manually created in the namespace
+  ##
+  tls:
+    - secretName: gitlab-server-tls
+      hosts:
+        - gitlab.example.com
+
+persistence:
+  ## This volume persists generated configuration files, keys, and certs.
+  ##
+  enabled: true
+  size: 10Gi
+  ## If defined, volume.beta.kubernetes.io/storage-class: <storageClass>
+  ## Default: volume.alpha.kubernetes.io/storage-class: default
+  ##
+  storageClass: "slow"
+  accessMode: ReadWriteOnce
+
+
+postgresql:
+  persistence:
+    enabled: true
+    storageClass: "slow"
+    size: 10Gi
+
+redis:
+  persistence:
+    enabled: true
+    storageClass: "slow"
+    size: 10Gi
+
+minio:
+  accessKey: "AKIAIOSFODNN7EXAMPLE"
+  secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+  persistence:
+    enabled: true
+    storageClass: "slow"
+    size: 20Gi
+
+sshPort: 22
+httpPort: 80
+httpsPort: 443
+
+
+config:
+  DEBUG: "true"
+  GITLAB_ROOT_EMAIL: "ipaq.lw@gmail.com"
+
+  GITLAB_ROOT_PASSWORD: "3Uhprz35WEYCmebz56dyvLciwvzQxz"
+  GITLAB_SECRETS_DB_KEY_BASE: "kCFSUsLlyZETCpStxxKG"
+  GITLAB_SECRETS_SECRET_KEY_BASE: "gPL3l6dQ4FXo6a9fwa6I"
+  GITLAB_SECRETS_OTP_KEY_BASE: "SVEHkkfIViQ4xDuNN8LM"
+
+  GITLAB_HOST: gitlab.example.com
+  GITLAB_PORT: 443
+  GITLAB_TIMEZONE: "Europe/Stockholm"
+  GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN: "186f6cdcb713adEXAMPLETOKEN"
+
+  GITLAB_SSH_HOST: "git.example.com"
+  GITLAB_SSH_PORT: "22"
+
+
+  SMTP_ENABLED: "true"
+  SMTP_DOMAIN: gitlab.example.com
+  SMTP_HOST: smtp.mailgun.org
+  SMTP_PORT: "587"
+  SMTP_USER: admin
+  SMTP_PASS: password
+  SMTP_STARTTLS: "true"
+  SMTP_AUTHENTICATION: login
+
+  GITLAB_REGISTRY_ENABLED: true
+  GITLAB_REGISTRY_HOST: dhub.example.com
+  GITLAB_REGISTRY_PORT: 443
+  GITLAB_REGISTRY_API_URL: https://dhub.example.com
+  GITLAB_REGISTRY_KEY_PATH: /certs/tls.key
+  SSL_REGISTRY_KEY_PATH: /certs/tls.key
+  SSL_REGISTRY_CERT_PATH: /certs/tls.crt
+
+
+runner:
+  enabled: true
+  gitlabUrl: "https://gitlab.example.com/ci/"
+  registrationToken: "186f6cdcb713adEXAMPLETOKEN"
+  cache:
+    enabled: true
+    accessKey: "AKIAIOSFODNN7EXAMPLE"
+    secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
+registry:
+  enabled: true
+  authTokenRealm: "https://gitlab.example.com/jwt/auth"
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: 'true'
+    hosts:
+      - dhub.example.com
+
+  persistence:
+    enabled: true

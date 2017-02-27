@@ -9,6 +9,7 @@ Some of the features:
 * Register and manage Letsencrypt certificates with [kube-lego](https://github.com/jetstack/kube-lego)
 * Deploys PostgreSQL, Redis and Minio as part of the setup
 * Deploys fully configured Docker registry with external domain (letsencrypt) and integration with gitlab.
+* Semi-automatic creating of Runner
 * Ability to customize any of the [environment variables](https://github.com/sameersbn/docker-gitlab#available-configuration-parameters)
 
 ## Requirements

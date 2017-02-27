@@ -128,6 +128,8 @@ config:
   # GITLAB_ROOT_PASSWORD: ""
   GITLAB_HOST: gitlab.example.com
   GITLAB_PORT: 443
+  GITLAB_HTTPS: "true"
+  GITLAB_SSH_PORT: "22"
   GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN: "4CAi770WqUUVgYzyGmeS0PbGqcpTKl8XLVZfRZom"
 
 
@@ -139,3 +141,5 @@ runner:
   ## for the fresh systems
   registrationToken: "4CAi770WqUUVgYzyGmeS0PbGqcpTKl8XLVZfRZom"
 
+registry:
+  enabled: false
