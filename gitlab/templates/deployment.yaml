@@ -200,9 +200,6 @@ spec:
           containerPort: 22
         - name: https
           containerPort: 443
-        volumeMounts:
-        - mountPath: /home/git/data
-          name: gitlab-data
         livenessProbe:
           httpGet:
             path: /help
@@ -220,6 +217,8 @@ spec:
         - name: certs
           mountPath: /certs
           readOnly: true
+        - name: gitlab-data
+          mountPath: /home/git/data
         {{ end }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
