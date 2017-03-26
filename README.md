@@ -18,8 +18,8 @@ Some of the features:
 * Helm 2.2.0 (for conditions and flags support)
  
 ## TODO:
-[] testing/refactoring
-[] splitting registry/runner into separate charts
-[] more flexible runner configuration
-[] monitoring of the whole thing in Prometheus
-[] Add support for gitlab pages
+- [] testing/refactoring
+- [] splitting registry/runner into separate charts
+- [] more flexible runner configuration
+- [] monitoring of the whole thing in Prometheus
+- [] Add support for gitlab pages
