@@ -192,6 +192,7 @@ spec:
 {{ include "email_data" . | indent 8 }}
 {{ include "backup_data" . | indent 8 }}
 {{ include "advanced_data" . | indent 8 }}
+{{ include "pages_data" . | indent 8 }}
 
         ports:
         - name: http
