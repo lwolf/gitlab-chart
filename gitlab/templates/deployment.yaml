@@ -213,14 +213,14 @@ spec:
             port: 80
           initialDelaySeconds: 15
           timeoutSeconds: 1
-        {{ if .Values.registry.enabled }}
         volumeMounts:
+        {{ if .Values.registry.enabled }}
         - name: certs
           mountPath: /certs
           readOnly: true
+        {{ end }}
         - name: gitlab-data
           mountPath: /home/git/data
-        {{ end }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
       volumes:

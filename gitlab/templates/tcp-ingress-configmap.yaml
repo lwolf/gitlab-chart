@@ -6,4 +6,4 @@ metadata:
   namespace: {{ .Values.ingress.configNamespaceOverride }}
   {{ end }}
 data:
-  {{ default "22" .Values.sshPort }}: {{ .Release.Namespace }}/{{ template "fullname" . }}:22
+  {{ default "22" .Values.sshPort }}: {{ .Release.Namespace }}/{{ template "fullname" . }}:{{ default "22" .Values.sshPort }}
