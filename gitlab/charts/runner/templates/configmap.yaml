@@ -11,6 +11,12 @@ data:
   config.toml: |
     concurrent = {{ default "4" .Values.concurrent }}
     check_interval = {{ default "1" .Values.concurrent }}
+    {{ if .Values.sentryDSN -}}
+    sentry_dsn = "{{ .Values.sentryDSN }}"
+    {{ end -}}
+    {{ if .Values.metricsServer -}}
+    metrics_server = {{ .Values.metricsServer -}}
+    {{ end -}}
 
     [[runners]]
       name = "{{ template "fullname" . }}"
@@ -25,7 +31,7 @@ data:
       {{ if .Values.cache.enabled -}}
       [runners.cache]
         Type = {{ .Values.cache.type | quote }}
-        ServerAddress = "http://{{ template "minio.fullname" . }}/"
+        ServerAddress = "{{ template "minio.fullname" . }}:9000"
         AccessKey = {{ .Values.cache.accessKey | quote }}
         SecretKey = {{ .Values.cache.secretKey | quote }}
         BucketName = {{ default "runner" .Values.cache.bucketName | quote }}

@@ -33,6 +33,9 @@ resources:
 # token: ""
 # registrationToken: ""
 
+# sentryDSN: ""
+# metricsServer: ""
+
 executor:
   type: "docker"
   tlsVerify: "false"
@@ -40,6 +43,8 @@ executor:
   privileged: "true"
   volumes:
    - "/cache"
+   - "/var/run/docker.sock:/var/run/docker.sock"
+   - "/usr/bin/docker:/usr/bin/docker"
 
 cache:
   enabled: false
