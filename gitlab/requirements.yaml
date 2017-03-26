@@ -1,15 +1,15 @@
 dependencies:
 - name: redis
-  version: 0.4.5
+  version: 0.4.6
   repository: https://kubernetes-charts.storage.googleapis.com/
 - name: postgresql
-  version: 0.4.0
+  version: 0.6.0
   repository: https://kubernetes-charts.storage.googleapis.com/
 - name: minio
-  version: 0.0.4
+  version: 0.1.0
   repository: https://kubernetes-charts.storage.googleapis.com/
 - name: runner
-  version: 0.1.0
+  version: 0.2.0
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: runner.enabled
 - name: registry
