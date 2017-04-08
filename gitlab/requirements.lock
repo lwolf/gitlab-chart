@@ -1,0 +1,38 @@
+dependencies:
+- condition: ""
+  enabled: false
+  import-values: null
+  name: redis
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  tags: null
+  version: 0.4.6
+- condition: ""
+  enabled: false
+  import-values: null
+  name: postgresql
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  tags: null
+  version: 0.6.0
+- condition: ""
+  enabled: false
+  import-values: null
+  name: minio
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  tags: null
+  version: 0.1.0
+- condition: ""
+  enabled: false
+  import-values: null
+  name: runner
+  repository: http://charts.lwolf.org/
+  tags: null
+  version: 0.2.0
+- condition: ""
+  enabled: false
+  import-values: null
+  name: registry
+  repository: http://charts.lwolf.org/
+  tags: null
+  version: 0.2.0
+digest: sha256:e3dfa9b77e0d635cddb622d9b611b7d82743544a90c5f82b3b80cc599eb6d5fc
+generated: 2017-04-08T21:17:13.819188002+02:00
