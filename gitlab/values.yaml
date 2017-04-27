@@ -6,7 +6,7 @@ image: sameersbn/gitlab
 ## Gitlab image version
 ## ref: https://hub.docker.com/r/sameersbn/gitlab/tags/
 ##
-imageTag: "9.0.3"
+imageTag: "9.1.0-1"
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
