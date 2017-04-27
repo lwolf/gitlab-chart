@@ -1,26 +1,26 @@
 {{- define "imap_config" -}}
-{{ if .Values.config.LDAP_ENABLED -}}
+{{ if .Values.config.IMAP_ENABLED -}}
 IMAP_ENABLED: {{ .Values.config.IMAP_ENABLED | quote }}
 {{- end }}
-{{ if .Values.config.LDAP_LABEL -}}
+{{ if .Values.config.IMAP_HOST -}}
 IMAP_HOST: {{ .Values.config.IMAP_HOST | quote }}
 {{- end }}
-{{ if .Values.config.LDAP_HOST -}}
+{{ if .Values.config.IMAP_PORT -}}
 IMAP_PORT: {{ .Values.config.IMAP_PORT | quote }}
 {{- end }}
-{{ if .Values.config.LDAP_PORT -}}
+{{ if .Values.config.IMAP_USER -}}
 IMAP_USER: {{ .Values.config.IMAP_USER | quote }}
 {{- end }}
-{{ if .Values.config.LDAP_UID -}}
+{{ if .Values.config.IMAP_PASS -}}
 IMAP_PASS: {{ .Values.config.IMAP_PASS | quote }}
 {{- end }}
-{{ if .Values.config.LDAP_METHOD -}}
+{{ if .Values.config.IMAP_SSL -}}
 IMAP_SSL: {{ .Values.config.IMAP_SSL | quote }}
 {{- end }}
-{{ if .Values.config.LDAP_BIND_DN -}}
+{{ if .Values.config.IMAP_STARTTLS -}}
 IMAP_STARTTLS: {{ .Values.config.IMAP_STARTTLS | quote }}
 {{- end }}
-{{ if .Values.config.LDAP_PASS -}}
+{{ if .Values.config.IMAP_MAILBOX -}}
 IMAP_MAILBOX: {{ .Values.config.IMAP_MAILBOX | quote }}
 {{- end }}
 {{- end }}
