@@ -5,6 +5,9 @@ AWS_BACKUPS: {{ .Values.config.AWS_BACKUPS | quote }}
 {{ if .Values.config.AWS_BACKUP_REGION -}}
 AWS_BACKUP_REGION: {{ .Values.config.AWS_BACKUP_REGION | quote }}
 {{- end }}
+{{ if .Values.config.AWS_BACKUP_ENDPOINT -}}
+AWS_BACKUP_ENDPOINT: {{ .Values.config.AWS_BACKUP_ENDPOINT | quote }}
+{{- end }}
 {{ if .Values.config.AWS_BACKUP_ACCESS_KEY_ID -}}
 AWS_BACKUP_ACCESS_KEY_ID: {{ .Values.config.AWS_BACKUP_ACCESS_KEY_ID | quote }}
 {{- end }}
@@ -34,6 +37,13 @@ AWS_BACKUP_MULTIPART_CHUNK_SIZE: {{ .Values.config.AWS_BACKUP_MULTIPART_CHUNK_SI
     configMapKeyRef:
       name: {{ template "fullname" . }}
       key: AWS_BACKUP_REGION
+{{- end }}
+{{ if .Values.config.AWS_BACKUP_ENDPOINT -}}
+- name: AWS_BACKUP_ENDPOINT
+  valueFrom:
+    configMapKeyRef:
+      name: {{ template "fullname" . }}
+      key: AWS_BACKUP_ENDPOINT
 {{- end }}
 {{ if .Values.config.AWS_BACKUP_ACCESS_KEY_ID -}}
 - name: AWS_BACKUP_ACCESS_KEY_ID
