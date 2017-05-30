@@ -13,7 +13,7 @@ Some of the features:
 * Ability to customize any of the [environment variables](https://github.com/sameersbn/docker-gitlab#available-configuration-parameters)
 
 ## Requirements
-* Kubernetes 1.5 (for StatefulSets support)
+* Kubernetes 1.5 (for StatefulSets support). 1.6 is not supported yet. Pull requests are very welcome.
 * PV support on the underlying infrastructure
 * Helm 2.2.0 (for conditions and flags support)
 
@@ -41,6 +41,7 @@ $ helm upgrade -f values-test.yaml --set runner.token=<TOKEN> <install-name> lwo
 - [x] splitting registry/runner into separate charts
 - [x] Add support for gitlab pages
 - [x] Upgrade to v9
+- [] Upgrade to Kubernetes 1.6+
 - [] testing/refactoring
 - [] more flexible runner configuration
 - [] monitoring of the whole thing in Prometheus
