@@ -5,7 +5,7 @@ dependencies:
   name: redis
   repository: https://kubernetes-charts.storage.googleapis.com/
   tags: null
-  version: 0.4.6
+  version: 0.7.0
 - condition: ""
   enabled: false
   import-values: null
@@ -26,7 +26,7 @@ dependencies:
   name: runner
   repository: http://charts.lwolf.org/
   tags: null
-  version: 0.2.0
+  version: 0.3.0
 - condition: ""
   enabled: false
   import-values: null
@@ -34,5 +34,5 @@ dependencies:
   repository: http://charts.lwolf.org/
   tags: null
   version: 0.2.0
-digest: sha256:e3dfa9b77e0d635cddb622d9b611b7d82743544a90c5f82b3b80cc599eb6d5fc
-generated: 2017-04-08T21:17:13.819188002+02:00
+digest: sha256:00b949f063d75fac8243f2e2d918d7d540e89a2847d728cc04411ffc4d7a345b
+generated: 2017-06-09T20:20:26.776456251+02:00
