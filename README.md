@@ -41,7 +41,7 @@ $ helm upgrade -f values-test.yaml --set runner.token=<TOKEN> <install-name> lwo
 - [x] splitting registry/runner into separate charts
 - [x] Add support for gitlab pages
 - [x] Upgrade to v9
-- [] Upgrade to Kubernetes 1.6+
+- [x] Upgrade to Kubernetes 1.6+
 - [] testing/refactoring
 - [] more flexible runner configuration
 - [] monitoring of the whole thing in Prometheus
