@@ -1,6 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $releaseName := .Release.Name -}}
 {{- $servicePort := .Values.httpPort -}}
+{{- $relativePath := .Values.config.GITLAB_RELATIVE_URL_ROOT }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -20,7 +21,7 @@ spec:
     - host: {{ . }}
       http:
         paths:
-          - path: /
+          - path: {{ default "/" $relativePath }}
             backend:
               serviceName: {{ printf "%s-%s" $releaseName "gitlab" | trunc 63 }}
               servicePort: {{ $servicePort }}
