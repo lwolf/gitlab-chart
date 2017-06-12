@@ -13,7 +13,7 @@ Some of the features:
 * Ability to customize any of the [environment variables](https://github.com/sameersbn/docker-gitlab#available-configuration-parameters)
 
 ## Requirements
-* Kubernetes 1.5 (for StatefulSets support). 1.6 is not supported yet. Pull requests are very welcome.
+* Kubernetes 1.5 (for StatefulSets support).
 * PV support on the underlying infrastructure
 * Helm 2.2.0 (for conditions and flags support)
 
