@@ -16,6 +16,7 @@ spec:
       annotations:
         checksum/config-map: {{ include (print $.Chart.Name "/templates/configmap.yaml") . | sha256sum }}
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
       - name: {{ template "fullname" . }}
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
