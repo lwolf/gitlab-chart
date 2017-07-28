@@ -42,6 +42,6 @@ $ helm upgrade -f values-test.yaml --set runner.token=<TOKEN> <install-name> lwo
 - [x] Add support for gitlab pages
 - [x] Upgrade to v9
 - [x] Upgrade to Kubernetes 1.6+
+- [x] more flexible runner configuration
 - [] testing/refactoring
-- [] more flexible runner configuration
 - [] monitoring of the whole thing in Prometheus
