@@ -45,3 +45,8 @@ $ helm upgrade -f values-test.yaml --set runner.token=<TOKEN> <install-name> lwo
 - [x] more flexible runner configuration
 - [] testing/refactoring
 - [] monitoring of the whole thing in Prometheus
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/lwolf/gitlab-chart/badge.svg?style=beer-square)](https://beerpay.io/lwolf/gitlab-chart)  [![Beerpay](https://beerpay.io/lwolf/gitlab-chart/make-wish.svg?style=flat-square)](https://beerpay.io/lwolf/gitlab-chart?focus=wish)
