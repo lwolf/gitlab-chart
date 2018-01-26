@@ -182,6 +182,9 @@ spec:
 {{- if .Values.config.SMTP_ENABLED }}
 {{ include "smtp_data" . | indent 8 }}
 {{- end }}
+{{- if .Values.config.LDAP_ENABLED }}
+{{ include "ldap_data" . | indent 8 }}
+{{- end }}
 {{- if .Values.config.GITLAB_REGISTRY_ENABLED }}
 {{ include "registry_data" . | indent 8 }}
 {{- end }}
