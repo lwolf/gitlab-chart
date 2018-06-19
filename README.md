@@ -28,6 +28,10 @@ $ curl https://raw.githubusercontent.com/lwolf/gitlab-chart/master/gitlab/values
 
 # install
 $ helm install -f values-test.yaml lwolf-charts/gitlab
+
+# establish DNS
+# if running with minikube, add an entry in /etc/hosts to the result of `$ minikube ip`
+
 # Wait until gitlab is up and running.
 $ while ! curl --output /dev/null --silent --head --fail https://gitlab.example.com/help; do sleep 1 && echo -n .; done
 ...................................................

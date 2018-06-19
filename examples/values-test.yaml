@@ -26,25 +26,32 @@ persistence:
   ## This volume persists generated configuration files, keys, and certs.
   ##
   enabled: false
-  size: 10Gi
+  size: 2Gi
   ## If defined, volume.beta.kubernetes.io/storage-class: <storageClass>
   ## Default: volume.alpha.kubernetes.io/storage-class: default
   ##
   storageClass: "default"
   accessMode: ReadWriteOnce
 
+resources:
+  requests:
+    memory: 512Mi
 
 postgresql:
+  memory: 256Mi
   persistence:
     enabled: false
     storageClass: "default"
-    size: 10Gi
+    size: 1Gi
 
 redis:
+  resources:
+    requests:
+      memory: 256Mi
   persistence:
     enabled: false
     storageClass: "default"
-    size: 10Gi
+    size: 1Gi
 
 minio:
   accessKey: "AKIAIOSFODNN7EXAMPLE"
@@ -52,7 +59,7 @@ minio:
   persistence:
     enabled: true
     storageClass: "default"
-    size: 20Gi
+    size: 1Gi
 
 sshPort: 22
 httpPort: 80
@@ -61,8 +68,9 @@ httpsPort: 443
 
 config:
   DEBUG: "true"
-  #  GITLAB_ROOT_EMAIL: "gitlab-admin@gmail.com"
-  #  GITLAB_HOST: gitlab.example.com
+  GITLAB_ROOT_EMAIL: "gitlab-admin@gitlab.example.com"
+  GITLAB_HOST: gitlab.example.com
+  GITLAB_HTTPS: "false"
 
   GITLAB_ROOT_PASSWORD: "3Uhprz35WEYCmebz56dyvLciwvzQxz"
   GITLAB_SECRETS_DB_KEY_BASE: "kCFSUsLlyZETCpStxxKG"
