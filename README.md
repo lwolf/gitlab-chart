@@ -47,8 +47,8 @@ $ helm upgrade -f values-test.yaml --set runner.token=<TOKEN> <install-name> lwo
 - [x] Upgrade to v9
 - [x] Upgrade to Kubernetes 1.6+
 - [x] more flexible runner configuration
-- [] testing/refactoring
-- [] monitoring of the whole thing in Prometheus
+- [ ] testing/refactoring
+- [ ] monitoring of the whole thing in Prometheus
 
 ## Support on Beerpay
 Hey dude! Help me out for a couple of :beers:!
