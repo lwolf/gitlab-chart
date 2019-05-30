@@ -1,5 +1,6 @@
 name: gitlab
-version: 0.2.8
+version: 0.3.0
+appVersion: 11.11.0
 description: GitLab Community Edition
 keywords:
 - git
